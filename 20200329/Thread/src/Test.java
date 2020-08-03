@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.concurrent.*;
 
 public class Test {
-    public static void main0(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException {
         ExecutorService pool = new ThreadPoolExecutor(//线程池---快递公司
                 3,// 核心线程数（正式员工）：创建好线程池，正式员工就开始取快递
 
@@ -45,11 +45,47 @@ public class Test {
                 System.out.println("送快递到新疆，B同学");
             }
         });
+        pool.execute(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("送快递到新疆，c同学");
+            }
+        });
+        pool.execute(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("送快递到新疆，d同学");
+            }
+        });
+        pool.execute(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("送快递到新疆，e同学");
+            }
+        });
+        pool.execute(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("送快递到新疆，f同学");
+            }
+        });
+        pool.execute(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("送快递到新疆，g同学");
+            }
+        });
+        pool.execute(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("送快递到新疆，j同学");
+            }
+        });
 
         System.out.println("我正在做事情");
     }
 
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         ScheduledExecutorService pool = Executors.newScheduledThreadPool(4);//正式员工
 //        ExecutorService pool = Executors.newCachedThreadPool();//正式员工为0，临时工数量不限制
         //延迟一秒执行
